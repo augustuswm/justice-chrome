@@ -1,0 +1,22 @@
+{
+  "name": "Justice.js Performance Monitor",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_title": "Justice.js",
+    "default_popup": "browser_action/html/options.html"
+  },
+  "background": {
+    "scripts": ["js/vendor/justice.min.js", "js/background/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/vendor/justice.min.js", "js/content/init.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
