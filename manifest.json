@@ -1,18 +1,15 @@
 {
-  "name": "Justice.js Performance Monitor",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "browser_action": {
-    "default_icon": {
-      "19": "img/fpsIcon-19.png",
-      "38": "img/fpsIcon-38.png"
-    },
-    "default_title": "Justice.js",
-    "default_popup": "browser_action/html/options.html"
-  },
   "background": {
     "scripts": ["js/vendor/justice.min.js", "js/background/background.js"],
     "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "img/fpsIcon-19-disabled.png",
+      "38": "img/fpsIcon-38-disabled.png"
+    },
+    "default_title": "Justice.js",
+    "default_popup": "browser_action/html/options.html"
   },
   "content_scripts": [
     {
@@ -20,7 +17,15 @@
       "js": ["js/vendor/justice.min.js", "js/content/init.js"]
     }
   ],
+  "icons": {
+    "19": "img/fpsIcon-19.png",
+    "38": "img/fpsIcon-38.png",
+    "128": "img/fpsIcon-128.png"
+  },
+  "manifest_version": 2,
+  "name": "Justice.js Performance Monitor",
   "permissions": [
     "activeTab"
-  ]
+  ],
+  "version": "0.0.1"
 }
