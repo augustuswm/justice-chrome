@@ -1,0 +1,64 @@
+#justice-run {
+  width: 300px;
+  font-size: 1.2em;
+}
+
+h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.options-header, .options-pane, .options-footer {
+  padding: 10px;
+}
+
+.options-header, .options-footer {
+  color: #38b636;
+  background-color: #333333;
+  border: 1px solid #000000;
+}
+
+.options-pane {
+  border: 1px solid #E7E7E7;
+  border-width: 0 1px;
+}
+
+.options-table td {
+  width: 100%;
+  padding: 2px 5px;
+  font-size: 0.75em;
+}
+
+.justice-toggle {
+  padding: 5px 10px;
+  background-color: #38b636;
+  color: #E7E7E7;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.justice-toggle:hover {
+}
+
+input {
+  outline: none;
+  padding: 3px;
+  box-sizing: border-box;
+  border: 0px solid #E7E7E7;
+  border-bottom: 1px solid #E7E7E7;
+  text-align: center;
+}
+
+.options-table tr td {
+  padding: 5px 0 3px;
+}
+
+.options-table tr:hover td {
+  color: #38b636;
+}
+
+.options-table tr:hover td input {
+  border-bottom: 1px solid #38b636;
+}

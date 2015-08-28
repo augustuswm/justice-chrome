@@ -1,4 +1,67 @@
+<link rel="stylesheet" href="../css/options.css" />
 <script type="text/javascript" src="../js/options.js"></script>
 <div id="justice-run" href="#">
-  <span id="justice-state"></span>
+  <div class="options-header">
+    <h2>Justice.js</h2>
+  </div>
+  <div class="options-pane">
+    <h3>
+      Settings
+    </h3>
+    <table class="options-table">
+      <tr>
+        <td>
+          Time to first byte
+        </td>
+        <td>
+          <input class="option" data-option="ttfb" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          DOM Interactive
+        </td>
+        <td>
+          <input class="option" data-option="interactive" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          DOM Complete
+        </td>
+        <td>
+          <input class="option" data-option="complete" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          First Paint
+        </td>
+        <td>
+          <input class="option" data-option="paint" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Page load
+        </td>
+        <td>
+          <input class="option" data-option="load" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Requests
+        </td>
+        <td>
+          <input class="option" data-option="requests" type="text" />
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="options-footer">
+    <span id="justice-toggle">
+      <h4 class="justice-state"></h4>
+    </span>
+  </div>
 </div>

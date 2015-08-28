@@ -8,17 +8,18 @@ chrome.extension.sendMessage({type: "justice.newtab"});
 // Listen for control commands from the extension for Justice for Justice
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
 
-  //console.log(message);
+  console.log(message);
 
   // If the background script requested for Justice to start
   if (message.type === "justice.start") {
+
     //console.log("justice.start");
-    if (justiceIsInitialized) {
-      Justice.start();
-    } else {
-      initalizeJustice();
-      justiceIsInitialized = true;
-    }
+    //if (justiceIsInitialized) {
+    //  Justice.start();
+    //} else {
+      initalizeJustice(message.data);
+      //justiceIsInitialized = true;
+    //}
   }
 
   // If the background script requested for Justice to stop
@@ -29,16 +30,9 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
 
 });
 
-var initalizeJustice = function() {
+var initalizeJustice = function(metrics) {
   Justice.init({
-    metrics: {
-      TTFB:             { budget: 200   },
-      domInteractive:   { budget: 250   },
-      domComplete:      { budget: 800   },
-      firstPaint:       { budget: 1000  },
-      pageLoad:         { budget: 2000  },
-      requests:         { budget: 6     },
-    },
+    metrics: metrics,
     warnThreshold: 0.8,
     showFPS: true,
     chartType: "spline",
