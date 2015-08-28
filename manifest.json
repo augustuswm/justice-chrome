@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "browser_action": {
+    "default_icon": {
+      "19": "img/fpsIcon-19.png",
+      "38": "img/fpsIcon-38.png"
+    },
     "default_title": "Justice.js",
     "default_popup": "browser_action/html/options.html"
   },
