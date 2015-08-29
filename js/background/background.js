@@ -1,5 +1,5 @@
 // Create the event listener for events from the tab and options
-chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
   // If the browser action requested for Justice to initialize
   if (message.type === "justice.newtab") {
@@ -10,6 +10,10 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
     // Run Justice on load if it is enabled
     if (state) {
       sendCommandToContent("justice.start");
+
+      return sendReponse(true);
+    } else {
+      return sendResponse(false);
     }
 
     // Update the icon based on the state
@@ -24,6 +28,8 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
     // Update the icon based on the state
     setIcon(true);
     //chrome.browserAction.setIcon({path: "../../img/fpsIcon-38.png"});
+
+    return sendResponse(true);
   }
 
   // If the browser action requested for Justice to stop
@@ -37,6 +43,8 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
     // Remove fps meter
     updateFPSCopy("");
     //chrome.browserAction.setIcon({path: "../../img/fpsIcon-38-disabled.png"});
+
+    return sendResponse(false);
   }
 
   // If the content page sent an fps update

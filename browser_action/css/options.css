@@ -3,9 +3,34 @@
   font-size: 1.2em;
 }
 
+#justice-toggle {
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#justice-toggle:hover {
+  color: #E7E7E7;
+  border-bottom: 1px solid #38b636;
+}
+
 h2, h3, h4 {
   margin: 0;
   padding: 0;
+  outline: none;
+}
+
+h2 a {
+  outline: none;
+  color: #38b636;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+h2 a:hover {
+  color: #E7E7E7;
+  border-bottom: 1px solid #38b636;
 }
 
 .options-header, .options-pane, .options-footer {
@@ -29,18 +54,23 @@ h2, h3, h4 {
   font-size: 0.75em;
 }
 
-.justice-toggle {
-  padding: 5px 10px;
-  background-color: #38b636;
-  color: #E7E7E7;
-  box-sizing: border-box;
-  cursor: pointer;
-  border-radius: 5px;
-  display: inline-block;
+.option-hint {
+  color: #CCCCCC;
+  font-size: 0.75em;
 }
 
-.justice-toggle:hover {
-}
+/*.justice-toggle {*/
+  /*padding: 5px 10px;*/
+  /*background-color: #38b636;*/
+  /*color: #E7E7E7;*/
+  /*box-sizing: border-box;*/
+  /*cursor: pointer;*/
+  /*border-radius: 5px;*/
+  /*display: inline-block;*/
+/*}*/
+
+/*.justice-toggle:hover {*/
+/*}*/
 
 input {
   outline: none;
@@ -57,6 +87,11 @@ input {
 
 .options-table tr:hover td {
   color: #38b636;
+}
+
+.options-table tr td input::selection {
+  color: #E7E7E7;
+  background-color: #38b636;
 }
 
 .options-table tr:hover td input {

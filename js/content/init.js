@@ -8,7 +8,7 @@ chrome.extension.sendMessage({type: "justice.newtab"});
 // Listen for control commands from the extension for Justice for Justice
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
 
-  console.log(message);
+  //console.log(message);
 
   // If the background script requested for Justice to start
   if (message.type === "justice.start") {

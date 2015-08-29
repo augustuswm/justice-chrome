@@ -2,19 +2,19 @@
 
 window.onload = function() {
 
-  var isInitialized = localStorage.getItem("justice.run") !== "false";
-
   // Set the default option state
-  updateStateDisplay(isInitialized);
+  updateStateDisplay(localStorage.getItem("justice.run") === "false");
 
   // Create a listener for the start / stop button
   document.getElementById("justice-toggle").onclick = function() {
-    var state = localStorage.getItem("justice.run") !== "false";
+    var state = localStorage.getItem("justice.run") === "true";
 
-    updateStateDisplay(state);
+    //console.log(chrome.runtime.sendMessage);
 
-    chrome.extension.sendMessage({
+    chrome.runtime.sendMessage({
       type: state ? "justice.stop" :  "justice.start"
+    }, function(response) {
+      updateStateDisplay(state);
     });
   };
 
@@ -31,7 +31,7 @@ window.onload = function() {
       var target = event.target,
           key = target.dataset.option;
 
-      console.log(key, target.value);
+      //console.log(key, target.value);
 
       // Store the value that was entered to the appropriate key
       localStorage.setItem("justice.options." + key, target.value);
@@ -41,6 +41,8 @@ window.onload = function() {
 
 var updateStateDisplay = function(state) {
   var stateDisplays = document.getElementsByClassName("justice-state");
+
+  console.log(stateDisplays.length, state);
 
   for (var i = 0; i < stateDisplays.length; i++) {
     stateDisplays[i].innerHTML = state ? "Show Monitor" : "Pause Monitor";
